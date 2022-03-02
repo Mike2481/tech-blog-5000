@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog 5000</title>
+    <link rel="stylesheet" href="../../public/stylesheets/style.css">
+    {{!-- is this the right way to link this stylesheet? --}}
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <a href="/">Tech Blog 5000</a>
+            </h1>
+            <nav>
+                <a href="/dashboard">Dashboard</a>
+                <a href="/login">Login</a>
+                <button id="logout" class="style-none">Logout</button>
+            </nav>
+        </header>
+        <main>
+            {{{ body }}}
+        </main>
+        <footer>
+            &copy;<em id="date"></em>Tech Blog
+        </footer>
+    </div>
+    
+</body>
+</html>
