@@ -1,7 +1,5 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
-const withAuth = require('../../utils/auth');
-
 
 // GET /api/users
 router.get('/', (req, res) => {
@@ -49,7 +47,7 @@ router.get('/:id', (req, res) => {
 });
 
 // POST(add) user 
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
 
 // To insert data, we can use Sequelize's .create() method. Pass in key/value pairs
 // where the keys are what we defined in the User model and the values are what we get from req.body
@@ -72,7 +70,7 @@ router.post('/', withAuth, (req, res) => {
 });
 
 // POST sign in
-router.post('/login', withAuth, (req, res) => {
+router.post('/login', (req, res) => {
     User.findOne({
         where: {
             // looks for matching username
@@ -105,7 +103,7 @@ router.post('/login', withAuth, (req, res) => {
 });
 
 // POST log out
-router.post('/logout', withAuth, (req, res) => {
+router.post('/logout', (req, res) => {
     // checks to see if the session shows logged in
     if(req.session.loggedIn) {
         req.session.destroy(() => {
@@ -117,7 +115,7 @@ router.post('/logout', withAuth, (req, res) => {
 });
 
 // PUT update user
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', (req, res) => {
       // pass in req.body to only update what's passed through
     User.update(req.body, {
         // requirement to use beforeUpdate hook in User model - hash password
@@ -141,7 +139,7 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 // DELETE destroy user
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
     // user id used as identifier for destroy
     User.destroy({
         where: {
