@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Blog 5000</title>
-    <link rel="stylesheet" href="../../public/stylesheets/style.css">
+    {{!-- <link rel="stylesheet" href="../../public/stylesheets/style.css"> --}}
     {{!-- is this the right way to link this stylesheet? --}}
 </head>
 
 <body>
-    <div class="container">
+    <div class="wrapper">
         <header>
             <h1>
                 <a href="/">Tech Blog 5000</a>
@@ -19,7 +19,7 @@
                 {{#if loggedIn}}
                 <a href="/homepage">Homepage</a>
                 <a href="/dashboard">Dashboard</a>
-                <button id="logout" class="style-none">Logout</button>
+                <button id="logout" class="btn-no-style">Logout</button>
                 {{else}}
                 <a href="/login">Login</a>
                 {{/if}}
@@ -32,6 +32,7 @@
             &copy;<em id="date"></em>Tech Blog
         </footer>
     </div>
+    
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}

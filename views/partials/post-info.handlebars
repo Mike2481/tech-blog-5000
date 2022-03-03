@@ -1,9 +1,11 @@
 <article class="post">
     <div class="title">
-    <a href="/post-extend"
-        <h3>{{title}}</h3>
+        <a href="/post/{{id}}">{{title}}</a>
     </div>
     <div class="meta">
-    {{format_date created_at}}
+        {{format_date created_at}}
+
+        {{!-- <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a> --}}
+
     </div>
 </article>
