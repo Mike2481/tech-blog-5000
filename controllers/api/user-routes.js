@@ -23,9 +23,6 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: Post,
-                // WHEN I click on the homepage option in the navigation
-                // THEN I am taken to the homepage and presented with existing 
-                // blog posts that include the post title and the date created
                 attributes: ['id', 'title', 'post_text', 'created_at']
             },
             {
@@ -52,8 +49,7 @@ router.get('/:id', (req, res) => {
 });
 
 // POST(add) user 
-// router.post('/', withAuth, (req, res) => {
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
 
 // To insert data, we can use Sequelize's .create() method. Pass in key/value pairs
 // where the keys are what we defined in the User model and the values are what we get from req.body
@@ -121,8 +117,7 @@ router.post('/logout', withAuth, (req, res) => {
 });
 
 // PUT update user
-// router.put('/:id', withAuth, (req, res) => {
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
       // pass in req.body to only update what's passed through
     User.update(req.body, {
         // requirement to use beforeUpdate hook in User model - hash password
@@ -146,8 +141,7 @@ router.put('/:id', (req, res) => {
 });
 
 // DELETE destroy user
-// router.delete('/:id', withAuth, (req, res) => {
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     // user id used as identifier for destroy
     User.destroy({
         where: {

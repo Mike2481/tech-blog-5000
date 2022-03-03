@@ -16,9 +16,13 @@
                 <a href="/">Tech Blog 5000</a>
             </h1>
             <nav>
+                {{#if loggedIn}}
+                <a href="/homepage">Homepage</a>
                 <a href="/dashboard">Dashboard</a>
-                <a href="/login">Login</a>
                 <button id="logout" class="style-none">Logout</button>
+                {{else}}
+                <a href="/login">Login</a>
+                {{/if}}
             </nav>
         </header>
         <main>
@@ -28,6 +32,9 @@
             &copy;<em id="date"></em>Tech Blog
         </footer>
     </div>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
     
 </body>
 </html>

@@ -16,13 +16,11 @@ router.get('/', (req, res) => {
 });
 
 // POST create a comment
-// router.post('/', withAuth, (req, res) => {
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Comment.create({
         comment_text: req.body.comment_text,
         post_id: req.body.post_id,
-        // user_id: req.session.user_id
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
     .then((dbCommentData) => res.json(dbCommentData))
     .catch((err) => {
@@ -32,13 +30,11 @@ router.post('/', (req, res) => {
 });
 
 // PUT update a comment
-// router.put('/:id', withAuth, (req, res) => {
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Comment.update({
         comment_text: req.body.comment_text,
         post_id: req.body.post_id,
-        // user_id: req.session.user_id
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     },
     {
         where: {
@@ -59,8 +55,7 @@ router.put('/:id', (req, res) => {
 });
 
 // DELETE destroy a comment
-// router.delete('/:id', withAuth, (req, res) => {
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Comment.destroy({
         where: {
             id: req.params.id,

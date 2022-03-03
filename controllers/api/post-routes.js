@@ -81,13 +81,11 @@ router.get('/:id', (req, res) => {
 });
 
 // POST create a blog post (requires user to be signed in)
-// router.post('/', withAuth, (req, res) => {
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Post.create({
         title: req.body.title,
         post_text: req.body.post_text,
-        user_id: req.body.user_id
-        // user_id: req.session.user_id
+        user_id: req.session.user_id
     }) 
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
@@ -97,8 +95,7 @@ router.post('/', (req, res) => {
 });
 
 // PUT update blog post
-// router.put('/:id', withAuth, (req, res) => {
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Post.update (
         {
             title: req.body.title,
@@ -124,8 +121,7 @@ router.put('/:id', (req, res) => {
 });
 
 // DELETE destroy a post by id
-// router.delete('/:id', withAuth, (req, res) => {
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Post.destroy({
         where: {
             id: req.params.id

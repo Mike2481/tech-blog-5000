@@ -8,9 +8,6 @@ router.use('/users', userRoutes);
 router.use('/posts', postRoutes);
 router.use('/comments', commentRoutes);
 
-// router.use((req, res) => {
-//     res.status(404).end();
-//   });
   
 
 module.exports = router;
