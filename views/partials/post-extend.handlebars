@@ -1,11 +1,15 @@
-<article class="post">
-    <div class="title">
-        {{title}}
+<article class="post-extend">
+    <div class="post-title">
+        <a href="/post/{{id}}">{{title}}</a>
     </div>
-    <div class="meta">
-        {{post_text}} 
+    <div class="post-text">
+        <p class="post-text">
+            {{post_text}} 
+        </p>
         <br>
+        <p class="author-info">
         by {{user.username}} on
         {{format_date created_at}}
+        </p>
     </div>
 </article>

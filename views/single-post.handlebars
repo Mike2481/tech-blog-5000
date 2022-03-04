@@ -1,4 +1,12 @@
-{{> post-extend post }}
+  <a href="/dashboard"> Return to dashboard</a>
+  <br>
+  <br>
+
+<div class="post-wrapper">
+    {{> post-extend post }}
+</div>
+<br>
+
 
 
 {{#if loggedIn}}
@@ -14,7 +22,7 @@
 {{/if}}
 <div>
 
-  <h4>Comments:</h4>
+  <h4 class="comments">Comments:</h4>
   {{> comments  post.comments }}
 </div>
 

@@ -2,19 +2,20 @@
   {{#if posts.length}}
   <section>
     <h2>Your Blog Posts</h2>
-    <ol>
+    <ul class="dashboard-posts" style="list-style-type:none;">
       {{#each posts as |post|}}
-      <li>
-        {{> post-info post}}
+      <li class="user-post">
+        {{> post-extend post}}
         <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Blog Post</a>
       </li>
       {{/each}}
-    </ol>
+    </ul>
   </section>
   {{/if}}
 
-  <section>
-    <h2>Create New Blog Post</h2>
+    <a href="/dashboard/new" class="add-link">Create New</a>
+  {{!-- <section>
+    <h2>Create New</h2>
 
     <form class="new-post-form">
       <div>
@@ -27,7 +28,7 @@
       </div>
       <button type="submit" class="btn">Create</button>
     </form>
-  </section>
+  </section> --}}
 
 
-<script src="/javascript/add-post.js"></script>
+  <script src="/javascript/add-post.js"></script>

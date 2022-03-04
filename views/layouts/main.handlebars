@@ -5,30 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Blog 5000</title>
-    {{!-- <link rel="stylesheet" href="../../public/stylesheets/style.css"> --}}
+    <link rel="stylesheet" href="/stylesheets/style.css">
     {{!-- is this the right way to link this stylesheet? --}}
 </head>
 
 <body>
     <div class="wrapper">
         <header>
-            <h1>
+            <h1 class="main-title">
                 <a href="/">Tech Blog 5000</a>
             </h1>
             <nav>
-                <a href="/">Homepage</a>
-                <a href="/dashboard">Dashboard</a>
                 {{#if loggedIn}}
+                <a class="btn-no-style" href="/">Homepage</a>
+                <a class="btn-no-style" href="/dashboard">Dashboard</a>
                 <button id="logout" class="btn-no-style">Logout</button>
+                {{else}}
+                <a class="btn-no-style" href="/">Homepage</a>
+                <a class="btn-no-style" href="/dashboard">Dashboard</a>
+                <a class="btn-no-style" href="/login">Login</a>
                 {{/if}}
-                <a href="/login">Login</a>
             </nav>
         </header>
         <main>
             {{{ body }}}
         </main>
         <footer>
-            &copy;<em id="date"></em>Tech Blog
+            <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Tech Blog 5000 All Rights Reserved</p>
         </footer>
     </div>
 
