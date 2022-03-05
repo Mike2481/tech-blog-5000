@@ -2,6 +2,8 @@
   {{#if posts.length}}
   <section>
     <h2>Your Blog Posts</h2>
+    <br>
+    <a href="/dashboard/new" class="add-link">Create New</a>
     <ul class="dashboard-posts" style="list-style-type:none;">
       {{#each posts as |post|}}
       <li class="user-post">
@@ -13,7 +15,6 @@
   </section>
   {{/if}}
 
-    <a href="/dashboard/new" class="add-link">Create New</a>
   {{!-- <section>
     <h2>Create New</h2>
 
