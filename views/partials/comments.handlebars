@@ -1,3 +1,5 @@
+{{!-- comment partial used in dashboard and single post views --}}
+
 <div class="comments">
   {{#each this}}
   <section class="comment">
@@ -6,9 +8,11 @@
     </div>
     <div class="text">
       {{comment_text}}
-    <a href="/single/edit/{{id}}" class="edit-link">Edit</a>
+      {{!-- link to comment edit view specific to the comment--}}
+      <a href="/single/edit/{{id}}">Edit</a>
     </div>
 
   </section>
   {{/each}}
 </div>
+

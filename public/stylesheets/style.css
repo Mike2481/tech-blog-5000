@@ -304,7 +304,7 @@ button[type=submit] {
     box-shadow: 1px 2px #7d7d7d;
 }
 
-.delete-post-btn {
+.delete-btn {
   background-color: #d41414;
   font-size: large;
   box-shadow: 1px 2px #7d7d7d;

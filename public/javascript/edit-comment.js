@@ -1,7 +1,8 @@
+
 async function editFormHandler(event) {
     event.preventDefault();
 
-    const text = document.querySelector('input[name="comment-text"]').value.trim();
+    const comment_text = document.querySelector('input[name="comment-text"]').value.trim();
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
@@ -13,11 +14,14 @@ async function editFormHandler(event) {
         headers: {
             'Content-Type': 'application/json'
         }
-
+        
     });
+// this will take the user back to the post page that had the comment
+// must still refresh the page to see updated info
+    if (response.ok && history.length > 0) {
+        window.history.back(-2);
 
-    if (response.ok) {
-        document.location.replace('/dashboard/');
+
     } else {
         alert(response.statusText);
     }

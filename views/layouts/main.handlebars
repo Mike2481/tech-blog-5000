@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Blog 5000</title>
+    {{!-- link to CSS stylesheet --}}
     <link rel="stylesheet" href="/stylesheets/style.css">
-    {{!-- is this the right way to link this stylesheet? --}}
 </head>
 
 <body>
@@ -16,6 +16,7 @@
                 <a href="/">Tech Blog 5000</a>
             </h1>
             <nav>
+                {{!-- conditional of loggedIn - session variable made at user creation --}}
                 {{#if loggedIn}}
                 <a class="btn-no-style" href="/">Homepage</a>
                 <a class="btn-no-style" href="/dashboard">Dashboard</a>
@@ -34,7 +35,7 @@
             <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Tech Blog 5000 All Rights Reserved</p>
         </footer>
     </div>
-
+                {{!-- conditional of loggedIn - session variable made at user creation --}}
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}

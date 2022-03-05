@@ -7,10 +7,12 @@ const router = require('express').Router();
 const apiRoutes = require('./api'); // pulls the index file by default which has all others pooled to it
 const homeRoutes = require('./home-routes');
 const dashboardRoutes = require('./dashboard-routes');
+const singleRoutes = require('./single-routes');
 
 router.use('/api', apiRoutes);
 router.use('/', homeRoutes);
 router.use('/dashboard', dashboardRoutes);
+router.use('/single', singleRoutes);
 
 
 router.use((req, res) => {

@@ -10,5 +10,5 @@ async function logout() {
     alert(response.statusText);
   }
 }
-
+// event listener set so click on the logout link will run destroy
 document.querySelector('#logout').addEventListener('click', logout);

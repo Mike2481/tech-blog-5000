@@ -1,3 +1,5 @@
+{{!-- edit post view with linked edit and delete buttons --}}
+
 <article class="post-edit">
   <a href="/dashboard"> Return to dashboard</a>
   <h2>
@@ -11,10 +13,10 @@
         <input type="text" name="post-text" value="{{post.post_text}}" />
     </div>
     <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
+    <button type="button" class="delete-btn">Delete post</button>
   </form>
 </article>
-
+{{!-- included comment form and submit button --}}
 <form class="comment-form">
   <div>
     <textarea name="comment-body"></textarea>
@@ -24,7 +26,7 @@
     <button type="submit">add comment</button>
   </div>
 </form>
-
+{{!-- render available comments --}}
 {{> comments  post.comments }}
 <script src="/javascript/comment.js"></script>
 <script src="/javascript/edit-post.js"></script>

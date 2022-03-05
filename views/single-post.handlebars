@@ -1,14 +1,17 @@
-  <a href="/dashboard"> Return to dashboard</a>
-  <br>
-  <br>
 
+{{!-- provides a link back to dashboard --}}
+
+<a href="/dashboard"> Return to dashboard</a>
+  <br>
+  <br>
+{{!-- uses post-extend to give more info on the post --}}
 <div class="post-wrapper">
     {{> post-extend post }}
 </div>
 <br>
 
 
-
+{{!-- conditional only shows add comment if logged in --}}
 {{#if loggedIn}}
 <form class="comment-form">
   <div>

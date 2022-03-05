@@ -1,9 +1,9 @@
 async function loginFormHandler(event) {
     event.preventDefault();
-  
+  // username and password obtained from form
     const username = document.querySelector("#username-login").value.trim();
     const password = document.querySelector("#password-login").value.trim();
-  
+  // form values passed to login POST method 
     if (username && password) {
       const response = await fetch("/api/users/login", {
         method: "post",
@@ -13,7 +13,7 @@ async function loginFormHandler(event) {
         }),
         headers: { "Content-Type": "application/json" },
       });
-  
+  // user is taken to dashboard once logged in
       if (response.ok) {
         document.location.replace("/dashboard/");
       } else {
@@ -22,7 +22,7 @@ async function loginFormHandler(event) {
     }
   }
   
-  
+  // same functionality as above but through the users api
   async function signupFormHandler(event) {
     event.preventDefault();
   

@@ -1,22 +1,22 @@
 async function deleteFormHandler(event) {
-    event.preventDefault();
-  
-    const id = window.location.toString().split("/")[
-      window.location.toString().split("/").length - 1
-    ];
-  
-    const response = await fetch(`/api/comments/${id}`, {
-      method: "DELETE",
-    });
-  
-    if (response.ok) {
-      document.location.replace("/dashboard");
-    } 
-    else {
-      alert(response.statusText);
-    }
+  event.preventDefault();
+  // selects id from url
+  const id = window.location.toString().split("/")[
+    window.location.toString().split("/").length - 1
+  ];
+
+  const response = await fetch(`/api/comments/${id}`, {
+    method: "DELETE",
+  });
+  // takes user back to previous page
+  if (response.ok && history.length > 0) {
+    window.history.back(-2);
   }
-  
-  document
-    .querySelector(".delete-comment-btn")
-    .addEventListener("click", deleteFormHandler);
+  else {
+    alert(response.statusText);
+  }
+}
+
+document
+  .querySelector(".delete-btn")
+  .addEventListener("click", deleteFormHandler);
