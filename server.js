@@ -11,7 +11,7 @@ const app = express(); // initialize express
 
 //Since we set up the routes the way we did, we don't have to worry about importing multiple files for different endpoints. 
 //The router instance in routes/index.js collected everything for us and packaged them up for server.js to use.
-const routes = require('./controllers/');
+const routes = require('./controllers');
 
 const sequelize = require('./config/connection');
 
@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // turn on routes
 app.use(routes);
 
-app.use(require('./controllers/'));
+// app.use(require('./controllers'));
 //   turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
