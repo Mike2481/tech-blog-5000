@@ -24,7 +24,7 @@ CMS tyle blog site, where users can publish their blog posts and comment on othe
 
 ## Installation
 
-Log in to the MySql shell and type source db/schema.sql.  Once the database is created, quit the shell and run seeds to populate tables by typing npm run seeds in the command line.  Once tables are seeded, visit the deployed application on Heroku [here](https://shielded-plateau-85330.herokuapp.com/)
+Log in to the MySql shell and type source db/schema.sql.  Once the database is created, quit the shell and run seeds to populate tables by typing npm run seeds in the command line.  Once tables are seeded, the application can be seen on localhost:3001  The unseeded or "fresh" application can be seen by visiting Heroku [here](https://shielded-plateau-85330.herokuapp.com/)
 
 
 
