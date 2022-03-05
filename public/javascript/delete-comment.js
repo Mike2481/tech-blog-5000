@@ -10,7 +10,7 @@ async function deleteFormHandler(event) {
   });
   // takes user back to previous page
   if (response.ok && history.length > 0) {
-    window.history.back(-2);
+    window.location = document.referrer;
   }
   else {
     alert(response.statusText);
